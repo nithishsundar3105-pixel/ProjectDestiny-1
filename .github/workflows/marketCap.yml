@@ -24,8 +24,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          d="2021-05-13"
-          end="2021-05-13"
+          d="2021-05-14"
+          end="2021-05-31"
 
           while :; do
             node arc/MarketCap.js "$d" || exit 1
