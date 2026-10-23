@@ -9,7 +9,7 @@ const IST_DAY = process.argv[2];
 const API_BASE =
     "https://api.dexscreener.com/token-pairs/v1/bsc";
 
-const REQUEST_DELAY_MS = 1500;
+const REQUEST_DELAY_MS = 200;
 const MAX_RETRIES = 5;
 const REQUEST_TIMEOUT_MS = 15000;
 const DEFAULT_429_WAIT_MS = 60000;
@@ -44,7 +44,7 @@ function monthFolder(month) {
         "September", "October", "November", "December"
     ];
 
-    return `${month}-${names[month - 1]}`;
+    return `${String(month).padStart(2, "0")}-${names[month - 1]}`;
 }
 
 // ---------- UTILITIES ----------
@@ -302,7 +302,6 @@ async function getLiquidity(address) {
 }
 
 // ---------- MAIN ----------
-
 async function main() {
     if (!IST_DAY) {
         console.error("Usage: node liquidity.js YYYY-MM-DD");
@@ -322,23 +321,27 @@ async function main() {
 
     const { year, month, day } = date;
     const monthDir = monthFolder(month);
+    const paddedMonthDir = `${String(month).padStart(2, "0")}-${monthDir.split("-").slice(1).join("-")}`;
+    const paddedDay = String(day).padStart(2, "0");
 
+    // Keep discovery input paths unchanged.
     const inputFile = path.join(
         "discovery",
         String(year),
-        monthDir,
-        `${day}.txt`
+        paddedMonthDir,
+        `${paddedDay}.txt`
     );
 
+    // Use padded month and day for worth output.
     const outputDir = path.join(
         "worth",
         String(year),
-        monthDir
+        paddedMonthDir
     );
 
     const outputFile = path.join(
         outputDir,
-        `${day}.jsonl`
+        `${paddedDay}.jsonl`
     );
 
     if (!fs.existsSync(inputFile)) {
@@ -374,8 +377,6 @@ async function main() {
 
     const records = loadRecords(outputFile);
 
-    // Only successful records are considered complete.
-    // Failed records will be retried on the next run.
     const pending = validAddresses.filter(address => {
         const previous = records.get(address.toLowerCase());
         return previous?.status !== "ok";
@@ -428,7 +429,6 @@ async function main() {
             );
         }
 
-        // Persist every result immediately.
         saveRecords(outputFile, records);
 
         if ((i + 1) % 100 === 0) {
@@ -459,7 +459,6 @@ async function main() {
         process.exitCode = 1;
     }
 }
-
 main().catch(error => {
     console.error("Fatal error:", errorMessage(error));
     process.exitCode = 1;
