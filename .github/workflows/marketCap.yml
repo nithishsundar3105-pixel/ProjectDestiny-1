@@ -1,0 +1,42 @@
+name: Market Cap Collection
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Run collection
+        working-directory: ${{ github.workspace }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          d="2021-05-13"
+          end="2021-05-13"
+
+          while :; do
+            node arc/MarketCap.js "$d" || exit 1
+
+            git add .
+
+            if ! git diff --cached --quiet; then
+              git commit -m "Market cap data: $d"
+              git push origin HEAD:main
+            fi
+
+            [ "$d" = "$end" ] && break
+            d=$(date -d "$d + 1 day" +%F)
+          done
