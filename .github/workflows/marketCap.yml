@@ -1,3 +1,4 @@
+
 name: Market Cap Collection
 
 on:
@@ -5,6 +6,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 jobs:
   collect:
@@ -19,16 +21,30 @@ jobs:
           node-version: 22
 
       - name: Run collection
+        id: collection
         working-directory: ${{ github.workspace }}
+        shell: bash
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           d="2021-05-14"
-          end="2021-05-31"
+          end="2026-09-30"
+          start_time=$(date +%s)
+          max_seconds=18900
 
-          while :; do
+          while [[ "$d" < "$end" || "$d" == "$end" ]]; do
+            elapsed=$(( $(date +%s) - start_time ))
+
+            if (( elapsed >= max_seconds )); then
+              echo "Time budget reached; continuing in next run."
+              break
+            fi
+
+            echo "Processing $d"
             node arc/MarketCap.js "$d" || exit 1
+
+            next=$(date -d "$d + 1 day" +%F)
 
             git add .
 
@@ -37,6 +53,23 @@ jobs:
               git push origin HEAD:main
             fi
 
-            [ "$d" = "$end" ] && break
-            d=$(date -d "$d + 1 day" +%F)
+            d="$next"
           done
+
+          if [[ "$d" > "$end" ]]; then
+            echo "has_more=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_more=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Start next run
+        if: success() && steps.collection.outputs.has_more == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'market-cap.yml',
+              ref: 'main'
+            });
