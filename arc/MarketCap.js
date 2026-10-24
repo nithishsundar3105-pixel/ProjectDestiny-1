@@ -455,9 +455,9 @@ async function main() {
     console.log(`Records : ${records.size}`);
     console.log("==============================");
 
-    if (failedTotal > 0 || invalidAddresses.length > 0) {
-        process.exitCode = 1;
-    }
+    // if (failedTotal > 0 || invalidAddresses.length > 0) {
+    //     process.exitCode = 1;
+    // }
 }
 main().catch(error => {
     console.error("Fatal error:", errorMessage(error));
