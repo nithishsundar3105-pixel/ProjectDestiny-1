@@ -1,0 +1,19 @@
+Date: 2025-01-09
+Input file: worth/2025/01-January/09.jsonl
+
+Unique valid input records: 388
+Liquidity threshold: > $100
+Passed liquidity filter: 7
+
+Verified contracts: 7
+Unverified contracts: 0
+
+Non-proxy contracts: 7
+Proxy contracts: 0
+Verified proxy implementations: 0
+Unverified proxy implementations: 0
+
+Source files saved: 7
+Processing errors: 0
+
+Note: A verified proxy whose implementation is unverified is not saved.
