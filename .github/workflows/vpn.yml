@@ -38,10 +38,11 @@ jobs:
           echo "Public IP before/after VPN:"
           curl -s https://ifconfig.me || true
           echo
-          # Optional: fail fast if VPN didn't come up
-          if ! ip link show | grep -qiE 'wg0|tun0|tap0'; then
-            echo "::warning::No VPN interface detected (wg0/tun0/tap0)."
+          # Updated to catch the wg-github interface name
+          if ! ip link show | grep -qiE 'wg0|wg-github|tun0|tap0'; then
+            echo "::warning::No VPN interface detected."
           fi
+
 
       - name: Run collection
         id: collection
