@@ -27,9 +27,10 @@ jobs:
           node-version: 22
 
       - name: Connect to VPN (WireGuard)
-        uses: egor-tensin/wireguard-action@v1
+        uses: ankurk91/wireguard-action@v1
         with:
           config: ${{ secrets.WIREGUARD_CONFIG }}
+
 
       - name: Verify VPN connection
         shell: bash
