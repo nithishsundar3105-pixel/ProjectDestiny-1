@@ -388,7 +388,7 @@
 {"address":"0xa30563691a84e13c1f733531f790858063694d3d","liquidity":0,"status":"ok","pairCount":0,"checkedAt":"2026-10-30T07:01:04.121Z"}
 {"address":"0x3da71f46c61bae1e88149860c3ec876da610fedd","liquidity":0,"status":"ok","pairCount":0,"checkedAt":"2026-10-30T07:01:04.479Z"}
 {"address":"0xbf70c0981e731527ad05f3ce26c8a8e63bf7ff61","liquidity":0,"status":"ok","pairCount":0,"checkedAt":"2026-10-30T07:01:04.815Z"}
-{"address":"0x0888edfec4c0a66fce074796cf4f6509c00f6c49","liquidity":null,"status":"error","error":"Pair has missing USD liquidity data.","checkedAt":"2026-10-30T07:01:05.138Z"}
+{"address":"0x0888edfec4c0a66fce074796cf4f6509c00f6c49","liquidity":null,"status":"error","error":"Pair has missing USD liquidity data.","checkedAt":"2026-10-30T08:13:23.057Z"}
 {"address":"0xa701784aa8b0d4dca45a66671fbbc816b00b830b","liquidity":0,"status":"ok","pairCount":0,"checkedAt":"2026-10-30T07:01:05.500Z"}
 {"address":"0x0fe656e59830964005c46ed39774d29507e209dc","liquidity":0,"status":"ok","pairCount":0,"checkedAt":"2026-10-30T07:01:05.863Z"}
 {"address":"0x9a2b158a7037c5a42a582380fda662db1deb5bfc","liquidity":0,"status":"ok","pairCount":0,"checkedAt":"2026-10-30T07:01:06.208Z"}
@@ -778,8 +778,8 @@
 {"address":"0x899515a37ebebcf2f9c9583be6b93940e698b96c","liquidity":803784.51,"status":"ok","pairCount":1,"checkedAt":"2026-10-30T07:03:17.032Z"}
 {"address":"0xf7de9f9b7cf6f75e27b788e30a7439ad905135bd","liquidity":0,"status":"ok","pairCount":0,"checkedAt":"2026-10-30T07:03:17.499Z"}
 {"address":"0xe814238daf118708cedc1927fab905764d94a009","liquidity":0,"status":"ok","pairCount":0,"checkedAt":"2026-10-30T07:03:17.853Z"}
-{"address":"0x0f032fa9c0c27150ef4899ea301589e30180700e","liquidity":null,"status":"error","error":"Pair has missing USD liquidity data.","checkedAt":"2026-10-30T07:03:18.196Z"}
-{"address":"0x1e4dc2690f7f8f43b6d38ce0ee7eb66f12e4b390","liquidity":null,"status":"error","error":"Pair has missing USD liquidity data.","checkedAt":"2026-10-30T07:03:18.540Z"}
+{"address":"0x0f032fa9c0c27150ef4899ea301589e30180700e","liquidity":null,"status":"error","error":"Pair has missing USD liquidity data.","checkedAt":"2026-10-30T08:13:23.338Z"}
+{"address":"0x1e4dc2690f7f8f43b6d38ce0ee7eb66f12e4b390","liquidity":null,"status":"error","error":"Pair has missing USD liquidity data.","checkedAt":"2026-10-30T08:13:23.601Z"}
 {"address":"0x9b89ee623a2f24ef843695cb89c448279d3d2ad9","liquidity":0,"status":"ok","pairCount":0,"checkedAt":"2026-10-30T07:03:18.949Z"}
 {"address":"0x21aaa8f56729cfde820c95d56f893af6e6aecaf5","liquidity":0,"status":"ok","pairCount":0,"checkedAt":"2026-10-30T07:03:19.262Z"}
 {"address":"0x6481f53ec86eda63b1039d18f6bd30c015c6cb07","liquidity":0,"status":"ok","pairCount":0,"checkedAt":"2026-10-30T07:03:19.544Z"}
@@ -1057,7 +1057,7 @@
 {"address":"0xee035e7bc564d38fbe787be7a701f68791867cdc","liquidity":0,"status":"ok","pairCount":0,"checkedAt":"2026-10-30T07:04:51.548Z"}
 {"address":"0x04a42e76e74b332c6882d423ec61be03ef117b07","liquidity":0,"status":"ok","pairCount":0,"checkedAt":"2026-10-30T07:04:51.897Z"}
 {"address":"0xc936f17a4f43bad9442714a2b5d8b7561c83db07","liquidity":0,"status":"ok","pairCount":0,"checkedAt":"2026-10-30T07:04:52.249Z"}
-{"address":"0x11a80e8221925512531847f4eb429042a213d656","liquidity":null,"status":"error","error":"Pair has missing USD liquidity data.","checkedAt":"2026-10-30T07:04:52.535Z"}
+{"address":"0x11a80e8221925512531847f4eb429042a213d656","liquidity":null,"status":"error","error":"Pair has missing USD liquidity data.","checkedAt":"2026-10-30T08:13:23.870Z"}
 {"address":"0x1b8b9b22598ffd7f865134fd0eebd90fae563694","liquidity":0,"status":"ok","pairCount":0,"checkedAt":"2026-10-30T07:04:52.879Z"}
 {"address":"0xf27be1dc244cdde3d15cc31275a8a64aad548af8","liquidity":0,"status":"ok","pairCount":0,"checkedAt":"2026-10-30T07:04:53.217Z"}
 {"address":"0xb4c83cf7547f9f08236252ce0c577d21d920c191","liquidity":0,"status":"ok","pairCount":0,"checkedAt":"2026-10-30T07:04:53.700Z"}
