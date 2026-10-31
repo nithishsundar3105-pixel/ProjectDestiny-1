@@ -433,7 +433,7 @@
 {"address":"0xe8996c6e63093c07e9aad0af8023afdc63f23d13","liquidity":0,"status":"ok","pairCount":0,"checkedAt":"2026-10-31T06:52:33.162Z"}
 {"address":"0xddf88773d8dca6093f46450de3b9f3d0e460e1ab","liquidity":0,"status":"ok","pairCount":0,"checkedAt":"2026-10-31T06:52:33.456Z"}
 {"address":"0x7667c753c325d24f9cce9860e9c900aa6ef43d33","liquidity":0,"status":"ok","pairCount":0,"checkedAt":"2026-10-31T06:52:33.748Z"}
-{"address":"0x28e3ff085f67163532a843fbf714178770a0210c","liquidity":null,"status":"error","error":"Pair has missing USD liquidity data.","checkedAt":"2026-10-31T06:52:34.052Z"}
+{"address":"0x28e3ff085f67163532a843fbf714178770a0210c","liquidity":null,"status":"error","error":"Pair has missing USD liquidity data.","checkedAt":"2026-10-31T13:27:45.319Z"}
 {"address":"0x37b1e1ea81d1b457ba7f05b61a5f64bff71234ee","liquidity":0,"status":"ok","pairCount":0,"checkedAt":"2026-10-31T06:52:34.365Z"}
 {"address":"0x860c717e636b9edd87374fd0ca4b346b32bc4d75","liquidity":0,"status":"ok","pairCount":0,"checkedAt":"2026-10-31T06:52:34.688Z"}
 {"address":"0xda15e09bca46a02e03a5de985e03be0af48a37b1","liquidity":0,"status":"ok","pairCount":0,"checkedAt":"2026-10-31T06:52:34.990Z"}
