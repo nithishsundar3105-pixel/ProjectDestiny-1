@@ -1,4 +1,3 @@
-
 name: Market Cap Collection
 
 # on:
@@ -35,12 +34,19 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          d="2022-07-27"
+          d="2022-08-02"
           end="2022-08-31"
           start_time=$(date +%s)
           max_seconds=18900
 
           while [[ "$d" < "$end" || "$d" == "$end" ]]; do
+            # Skip 2022-08-08 without doing any work
+            if [[ "$d" == "2022-08-08" ]]; then
+              echo "Skipping $d"
+              d=$(date -d "$d + 1 day" +%F)
+              continue
+            fi
+
             elapsed=$(( $(date +%s) - start_time ))
 
             if (( elapsed >= max_seconds )); then
