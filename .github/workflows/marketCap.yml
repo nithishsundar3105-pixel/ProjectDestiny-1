@@ -35,8 +35,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          d="2024-12-04"
-          end="2024-12-31"
+          d="2022-09-01"
+          end="2022-12-31"
           start_time=$(date +%s)
           max_seconds=18900
 
